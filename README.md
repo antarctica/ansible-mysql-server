@@ -50,6 +50,12 @@ This role is designed for internal use but if useful can be shared publicly.
 * `mysql_server_default_allowed_hosts_all_users`
 	* Controls the list of hosts (local or remote) the root user can connect from.
 	* **Do not override this variable**, use `mysql_server_default_allowed_hosts_<user>_user` to set extra default hosts for a user or `mysql_server_user_allowed_hosts_<user>_user` to set extra hosts for a user.
+    * Structured as an array of addresses (IP/hostname/FQDN)
+    * Default: [array]
+        * "127.0.0.1"
+        * "localhost"
+* `mysql_server_allowed_hosts_app_user`
+    * Controls the list of hosts (local or remote) the app user can connect from.
 	* "127.0.0.1" and "localhost" values MUST be specified in this variable for Ansible to interact with the database.
 	* "localhost" MUST be the last item in this variable, see [here](http://ansible.cc/docs/modules.html#mysql-user) for details.
 	* Structured as an array of addresses (IP/hostname/FQDN)
