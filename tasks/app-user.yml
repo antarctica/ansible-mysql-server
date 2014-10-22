@@ -4,13 +4,13 @@
 # User allowed hosts must be set before default hosts
 
 - name: create mysql app user for user defined allowed hosts
-  mysql_user: name=app state=present password={{ mysql_server_app_user_password }} host={{ item }}
+  mysql_user: login_user=controller login_password={{ mysql_server_controller_user_password }} name=app state=present password={{ mysql_server_app_user_password }} host={{ item }}
   with_items: mysql_server_user_allowed_hosts_app_user
 
 - name: create mysql app user for app user default allowed hosts
-  mysql_user: name=app state=present password={{ mysql_server_app_user_password }} host={{ item }}
+  mysql_user: login_user=controller login_password={{ mysql_server_controller_user_password }} name=app state=present password={{ mysql_server_app_user_password }} host={{ item }}
   with_items: mysql_server_default_allowed_hosts_app_user
 
 - name: create mysql app user for all mysql users default allowed hosts
-  mysql_user: name=app state=present password={{ mysql_server_app_user_password }} host={{ item }}
+  mysql_user: login_user=controller login_password={{ mysql_server_controller_user_password }} name=app state=present password={{ mysql_server_app_user_password }} host={{ item }}
   with_items: mysql_server_default_allowed_hosts_all_users
