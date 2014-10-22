@@ -1,0 +1,84 @@
+# MySQL Server (`mysql-server`)
+
+**Part of the BAS Ansible Role Collection (BARC)**
+
+Installs and secures MySQL database server
+
+## Overview
+
+* Installs MySQL package with python bindings required by ansible.
+* Configures accounts for local users (root and app) with superadmin and no permissions respectively.
+* Configures external access, if desired, and configures allowed hosts for users (root and app) as required
+* Secures installation by removing test database and the anonymous user
+
+## Author
+
+[British Antarctic Survey](http://www.antarctica.ac.uk) - Web & Applications Team
+
+Contact: [basweb@bas.ac.uk](mailto:basweb@bas.ac.uk).
+
+## Availability
+
+This role is designed for internal use but if useful can be shared publicly.
+
+## License
+
+[Open Government Licence V2](https://www.nationalarchives.gov.uk/doc/open-government-licence/version/2/)
+
+## Requirements
+
+### BAS Ansible Role Collection (BARC)
+
+* `core`
+
+## Variables
+
+* `mysql_server_root_user_password`
+    * Default password for root user.
+    * Default: "precipice-08563%"
+
+* `mysql_server_app_user_password`
+    * Default password for app user.
+    * Default: "infamous-&34529"
+
+* `mysqlsql_server_bind_address`
+    * The address/interface on which to listen for incoming connections.
+    * By default this will bind to the servers external IP to allow external access, to prevent this set this value to "localhost"
+    * Default: "{{ ansible_eth1.ipv4.address }}"
+* `mysqlsql_server_allowed_hosts_root_user`
+    * Controls the list of hosts (local or remote) the root user can connect from.
+    * The default options MUST be included for ansible to interact with the database, localhost MUST be the last item.
+    * Structured as an array of addresses (IP/hostname/FQDN)
+    * Default: [array]
+        * "127.0.0.1"
+        * "localhost"
+* `mysqlsql_server_allowed_hosts_app_user`
+    * Controls the list of hosts (local or remote) the app user can connect from.
+    * The default options MUST be included for ansible to interact with the database, localhost MUST be the last item.
+    * Structured as an array of addresses (IP/hostname/FQDN)
+    * Default: [array]
+        * "127.0.0.1"
+        * "localhost"
+
+## Changelog
+
+### 0.1.3.1 - October 2014
+
+* Migrating role into BARC - this version should be a drop in replacement for any previous versions of this role
+* Minor refactoring
+
+### 0.1.3 - August 2014
+
+* Fixing style used for expressing default bind-address (again), makes no overall changes
+
+### 0.1.2 - August 2014
+
+* Fixing style used for expressing default bind-address, makes no overall changes
+
+### 0.1.1 - July 2014
+
+* Fixing slight misconfiguration with default bind-address, makes no overall changes
+
+### 0.1.0 - June 2014
+
+* initial version

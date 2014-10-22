@@ -1,0 +1,5 @@
+---
+# Configure MySQL account for anonymous user
+
+- name: delete anonymous MySQL server user for localhost
+  mysql_user: user="" state="absent"
