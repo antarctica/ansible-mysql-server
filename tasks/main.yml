@@ -16,5 +16,6 @@
   mysql_db: db=test state=absent
 
 - include: root-user.yml
+- include: controller-user.yml
 - include: app-user.yml
 - include: anonymous-user.yml
