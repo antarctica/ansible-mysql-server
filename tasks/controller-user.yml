@@ -1,0 +1,12 @@
+---
+# Configure MySQL account for controller user
+# See http://docs.ansible.com/mysql_user_module.html for why both tasks are required
+# User allowed hosts must be set before default hosts
+
+- name: create mysql account for controller and set password for user hosts
+  mysql_user: name=controller state=present password={{ mysqlsql_server_controller_user_password }} host={{ item }} priv=*.*:ALL,GRANT
+  with_items: mysqlsql_server_user_allowed_hosts_controller_user
+
+- name: create mysql account for controller and set password for default hosts
+  mysql_user: name=controller state=present password={{ mysqlsql_server_controller_user_password }} host={{ item }} priv=*.*:ALL,GRANT
+  with_items: mysqlsql_server_default_allowed_hosts_controller_user
