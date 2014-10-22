@@ -1,24 +1,24 @@
 ---
 # Default variables - inventory or playbook overrides will be respected
 
-mysqlsql_server_root_user_password: "precipice-08563%"
-mysqlsql_server_controller_user_password: "cacophony-234/877"
-mysqlsql_server_app_user_password: "infamous-&34529"
+mysql_server_root_user_password: "precipice-08563%"
+mysql_server_controller_user_password: "cacophony-234/877"
+mysql_server_app_user_password: "infamous-&34529"
 
-mysqlsql_server_bind_address: "{{ ansible_eth1.ipv4.address }}"
+mysql_server_bind_address: "{{ ansible_eth1.ipv4.address }}"
 
-mysqlsql_server_default_allowed_hosts_root_user:
+mysql_server_default_allowed_hosts_root_user:
   - 127.0.0.1
   - localhost  # Must be last item for idempotency, see http://ansible.cc/docs/modules.html#mysql-user
-mysqlsql_server_default_allowed_hosts_controller_user:
+mysql_server_default_allowed_hosts_controller_user:
    - 127.0.0.1
    - localhost  # Must be last item for idempotency, see http://ansible.cc/docs/modules.html#mysql-user
-mysqlsql_server_default_allowed_hosts_app_user:
+mysql_server_default_allowed_hosts_app_user:
   - 127.0.0.1
   - localhost  # Must be last item for idempotency, see http://ansible.cc/docs/modules.html#mysql-user
 
-mysqlsql_server_user_allowed_hosts_root_user: []
-mysqlsql_server_user_allowed_hosts_controller_user: []
-mysqlsql_server_user_allowed_hosts_app_user: []
+mysql_server_user_allowed_hosts_root_user: []
+mysql_server_user_allowed_hosts_controller_user: []
+mysql_server_user_allowed_hosts_app_user: []
 
-mysqlsql_server_create_app_db: false
+mysql_server_create_app_db: false

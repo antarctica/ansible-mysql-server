@@ -42,18 +42,18 @@ This role is designed for internal use but if useful can be shared publicly.
     * Default password for app user.
     * Default: "infamous-&34529"
 
-* `mysqlsql_server_bind_address`
+* `mysql_server_bind_address`
     * The address/interface on which to listen for incoming connections.
     * By default this will bind to the servers external IP to allow external access, to prevent this set this value to "localhost"
     * Default: "{{ ansible_eth1.ipv4.address }}"
-* `mysqlsql_server_allowed_hosts_root_user`
+* `mysql_server_allowed_hosts_root_user`
     * Controls the list of hosts (local or remote) the root user can connect from.
     * The default options MUST be included for ansible to interact with the database, localhost MUST be the last item.
     * Structured as an array of addresses (IP/hostname/FQDN)
     * Default: [array]
         * "127.0.0.1"
         * "localhost"
-* `mysqlsql_server_allowed_hosts_app_user`
+* `mysql_server_allowed_hosts_app_user`
     * Controls the list of hosts (local or remote) the app user can connect from.
     * The default options MUST be included for ansible to interact with the database, localhost MUST be the last item.
     * Structured as an array of addresses (IP/hostname/FQDN)
@@ -71,6 +71,7 @@ This role is designed for internal use but if useful can be shared publicly.
 * Refactoring allowed hosts variables into default and user variables (per MySQL user) for consistency with other roles
 * Adding controller user with root permissions
 * Adding option to create an app database
+* Fixing misspelt variables
 
 ### 0.1.4 - October 2014
 
