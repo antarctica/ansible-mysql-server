@@ -7,8 +7,8 @@ Installs and secures MySQL database server with an optional app database
 ## Overview
 
 * Installs MySQL package with python bindings required by ansible.
-* Configures accounts for local users (root and app) with superadmin and no permissions respectively.
-* Configures external access, if desired, and configures allowed hosts for users (root and app) as required
+* Configures accounts for local users (root, controller and app) with full permissions for root/controller.
+* Configures external access, if desired, and configures allowed hosts for mysql users as required
 * Secures installation by removing test database and the anonymous user
 * Optionally creates an app database assigning the app mysql user full access
 
@@ -69,7 +69,7 @@ This role is designed for internal use but if useful can be shared publicly.
 ### 0.2.0 - October 2014
 
 * Refactoring allowed hosts variables into default and user variables (per MySQL user) for consistency with other roles
-* Adding controller user with root permissions
+* Adding mysql controller user with root permissions
 * Adding option to create an app database
 * Fixing misspelt variables
 * Refactoring allowed hosts variables
@@ -98,4 +98,4 @@ This role is designed for internal use but if useful can be shared publicly.
 
 ### 0.1.0 - June 2014
 
-* initial version
+* Initial version
