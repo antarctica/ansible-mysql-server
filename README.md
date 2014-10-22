@@ -2,7 +2,7 @@
 
 **Part of the BAS Ansible Role Collection (BARC)**
 
-Installs and secures MySQL database server
+Installs and secures MySQL database server with an optional app database
 
 ## Overview
 
@@ -10,6 +10,7 @@ Installs and secures MySQL database server
 * Configures accounts for local users (root and app) with superadmin and no permissions respectively.
 * Configures external access, if desired, and configures allowed hosts for users (root and app) as required
 * Secures installation by removing test database and the anonymous user
+* Optionally creates an app database assigning the app mysql user full access
 
 ## Author
 
@@ -59,6 +60,9 @@ This role is designed for internal use but if useful can be shared publicly.
     * Default: [array]
         * "127.0.0.1"
         * "localhost"
+* `mysql_server_create_app_db`
+    * If "true" a database named "app" will be created with the app user assigned full access.
+    * Default: "false"
 
 ## Changelog
 
@@ -66,6 +70,7 @@ This role is designed for internal use but if useful can be shared publicly.
 
 * Refactoring allowed hosts variables into default and user variables (per MySQL user) for consistency with other roles
 * Adding controller user with root permissions
+* Adding option to create an app database
 
 ### 0.1.4 - October 2014
 

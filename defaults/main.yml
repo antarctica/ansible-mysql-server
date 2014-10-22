@@ -20,3 +20,5 @@ mysqlsql_server_default_allowed_hosts_app_user:
 mysqlsql_server_user_allowed_hosts_root_user: []
 mysqlsql_server_user_allowed_hosts_controller_user: []
 mysqlsql_server_user_allowed_hosts_app_user: []
+
+mysqlsql_server_create_app_db: false

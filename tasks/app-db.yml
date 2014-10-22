@@ -1,0 +1,8 @@
+---
+# Optionally create default 'app' database asigned to the app user
+
+- name: Create app database
+  mysql_db: login_user=controller login_password="{{ mysql_server_controller_user_password }}" name=app encoding='UTF-8' state=present
+
+- name: grant access to app database to app mysql user
+  mysql_user: login_user=controller login_password="{{ mysqlsql_server_controller_user_password }}" name=app state=present priv=app.*:ALL

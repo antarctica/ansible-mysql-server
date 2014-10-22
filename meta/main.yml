@@ -1,6 +1,6 @@
 ---
 galaxy_info:
-  description: Installs and secures MySQL database server
+  description: Installs and secures MySQL database server with an optional app database
   author: British Antarctic Survey - Web and Applications Team
   company: British Antarctic Survey
   license: Open Government Licence V2
