@@ -64,6 +64,8 @@ This role is designed for internal use but if useful can be shared publicly.
 
 ### 0.2.0 - October 2014
 
+* Refactoring allowed hosts variables into default and user variables (per MySQL user) for consistency with other roles
+
 ### 0.1.4 - October 2014
 
 * Fixing invalid version number
