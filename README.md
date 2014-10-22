@@ -62,6 +62,11 @@ This role is designed for internal use but if useful can be shared publicly.
 
 ## Changelog
 
+### 0.1.4 - October 2014
+
+* Fixing invalid version number
+* Fixing non-updated allowed_hosts variables for root and app user accounts preventing login
+
 ### 0.1.3.1 - October 2014
 
 * Migrating role into BARC - this version should be a drop in replacement for any previous versions of this role

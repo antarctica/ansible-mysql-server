@@ -3,4 +3,4 @@
 
 - name: create mysql account for app
   mysql_user: name=app state=present password={{ mysqlsql_server_app_user_password }} host={{ item }}
-  with_items: app_hosts
+  with_items: mysqlsql_server_allowed_hosts_app_user
