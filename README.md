@@ -72,6 +72,7 @@ This role is designed for internal use but if useful can be shared publicly.
 * Adding controller user with root permissions
 * Adding option to create an app database
 * Fixing misspelt variables
+* Refactoring allowed hosts variables
 
 ### 0.1.4 - October 2014
 

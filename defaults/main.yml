@@ -7,15 +7,13 @@ mysql_server_app_user_password: "infamous-&34529"
 
 mysql_server_bind_address: "{{ ansible_eth1.ipv4.address }}"
 
-mysql_server_default_allowed_hosts_root_user:
+mysql_server_default_allowed_hosts_all_users:
   - 127.0.0.1
   - localhost  # Must be last item for idempotency, see http://ansible.cc/docs/modules.html#mysql-user
-mysql_server_default_allowed_hosts_controller_user:
-   - 127.0.0.1
-   - localhost  # Must be last item for idempotency, see http://ansible.cc/docs/modules.html#mysql-user
-mysql_server_default_allowed_hosts_app_user:
-  - 127.0.0.1
-  - localhost  # Must be last item for idempotency, see http://ansible.cc/docs/modules.html#mysql-user
+
+mysql_server_default_allowed_hosts_root_user: []
+mysql_server_default_allowed_hosts_controller_user: []
+mysql_server_default_allowed_hosts_app_user: []
 
 mysql_server_user_allowed_hosts_root_user: []
 mysql_server_user_allowed_hosts_controller_user: []
