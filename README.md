@@ -62,6 +62,8 @@ This role is designed for internal use but if useful can be shared publicly.
 
 ## Changelog
 
+### 0.2.0 - October 2014
+
 ### 0.1.4 - October 2014
 
 * Fixing invalid version number
