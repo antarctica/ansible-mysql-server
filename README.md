@@ -73,6 +73,7 @@ This role is designed for internal use but if useful can be shared publicly.
 * Adding option to create an app database
 * Fixing misspelt variables
 * Refactoring allowed hosts variables
+* New mysql controller user is used to create mysql app user
 
 ### 0.1.4 - October 2014
 
