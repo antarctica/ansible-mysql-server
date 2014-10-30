@@ -11,12 +11,16 @@
 
 - name: configure user defined allowed hosts for mysql root user
   mysql_user: name=root state=present host={{ item }}
-  with_items: mysql_server_user_allowed_hosts_root_user
+  with_items: mysql_server_user_allowed_hosts_root_mysql_user
+
+- name: create mysql root user for all mysql users defined allowed hosts
+  mysql_user: name=root state=present host={{ item }}
+  with_items: mysql_server_user_allowed_hosts_all_mysql_users
 
 - name: configure root user default allowed hosts
   mysql_user: name=root state=present host={{ item }}
-  with_items: mysql_server_default_allowed_hosts_root_user
+  with_items: mysql_server_default_allowed_hosts_root_mysql_user
 
 - name: configure default allowed hosts for all users for root user
   mysql_user: name=root state=present host={{ item }}
-  with_items: mysql_server_default_allowed_hosts_all_users
+  with_items: mysql_server_default_allowed_hosts_all_mysql_users

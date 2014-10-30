@@ -4,13 +4,17 @@
 # User allowed hosts must be set before default hosts
 
 - name: create mysql controller user for user defined allowed hosts
-  mysql_user: name=controller state=present password={{ mysql_server_controller_user_password }} priv=*.*:ALL,GRANT host={{ item }}
-  with_items: mysql_server_user_allowed_hosts_controller_user
+  mysql_user: name="{{ mysql_server_controller_mysql_user_username }}" state=present password="{{ mysql_server_controller_mysql_user_password }}" priv=*.*:ALL,GRANT host={{ item }}
+  with_items: mysql_server_user_allowed_hosts_controller_mysql_user
+
+- name: create mysql controller user for all mysql users defined allowed hosts
+  mysql_user: name="{{ mysql_server_controller_mysql_user_username }}" state=present password="{{ mysql_server_controller_mysql_user_password }}" priv=*.*:ALL,GRANT host={{ item }}
+  with_items: mysql_server_user_allowed_hosts_all_mysql_users
 
 - name: create mysql controller user for controller user default allowed hosts
-  mysql_user: name=controller state=present password={{ mysql_server_controller_user_password }} priv=*.*:ALL,GRANT host={{ item }}
-  with_items: mysql_server_default_allowed_hosts_controller_user
+  mysql_user: name="{{ mysql_server_controller_mysql_user_username }}" state=present password={{ mysql_server_controller_mysql_user_password }} priv=*.*:ALL,GRANT host={{ item }}
+  with_items: mysql_server_default_allowed_hosts_controller_mysql_user
 
 - name: create mysql controller user for all mysql users default allowed hosts
-  mysql_user: name=controller state=present password={{ mysql_server_controller_user_password }} priv=*.*:ALL,GRANT host={{ item }}
-  with_items: mysql_server_default_allowed_hosts_all_users
+  mysql_user: name="{{ mysql_server_controller_mysql_user_username }}" state=present password={{ mysql_server_controller_mysql_user_password }} priv=*.*:ALL,GRANT host={{ item }}
+  with_items: mysql_server_default_allowed_hosts_all_mysql_users
