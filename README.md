@@ -37,9 +37,23 @@ This role is designed for internal use but if useful can be shared publicly.
 * `mysql_server_root_mysql_user_password`
     * Default password for MySQL root user.
     * Default: "precipice-08563%"
+* `mysql_server_controller_mysql_user_enabled` 
+	* If "true" a user for database server management tasks, termed a controller user, will be created with root privileges.
+	* Default: true
+* `mysql_server_controller_mysql_user_username`
+	* The username of the controller MySQL user, used for managing the database server, if enabled
+	* This variable **must** be a valid MySQL user
+	* Default: "controller"
 * `mysql_server_controller_mysql_user_password`
     * Default password for MySQL controller user.
     * Default: "cacophony-234/877"
+* `mysql_server_app_mysql_user_enabled` 
+	* If "true" a user for day to day database tasks, termed an app user, will be created with no initial privileges.
+	* Default: true
+* `mysql_server_app_mysql_user_username` 
+	* The username of the app MySQL user, used for day to day database tasks, if enabled
+	* This variable **must** be a valid MySQL user
+	* Default: "app"
 * `mysql_server_app_mysql_user_password`
     * Default password for MySQL app user.
     * Default: "infamous-&34529"
@@ -98,6 +112,8 @@ This role is designed for internal use but if useful can be shared publicly.
 
 * Updating dependencies
 * Refactoring variables, all existing variables have been renamed to avoid confusion between OS users and MySQL users
+* Usernames for controller and app users, both OS and MySQL, are now configurable using variables
+* Controller and app MySQL users are now optional, though enabled by default
 
 ### 0.2.0 - October 2014
 
