@@ -16,6 +16,7 @@
   mysql_db: db=test state=absent
 
 - include: root-user.yml
+
 - include: controller-user.yml
   when: mysql_server_controller_mysql_user_enabled == true
 

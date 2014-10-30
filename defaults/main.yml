@@ -10,6 +10,7 @@ mysql_server_controller_mysql_user_password: "cacophony-234/877"
 mysql_server_app_mysql_user_enabled: true
 mysql_server_app_mysql_user_username: app
 mysql_server_app_mysql_user_password: "infamous-&34529"
+
 mysql_server_default_allowed_hosts_all_mysql_users:
   - 127.0.0.1
   - localhost  # Must be last item for idempotency, see http://ansible.cc/docs/modules.html#mysql-user
