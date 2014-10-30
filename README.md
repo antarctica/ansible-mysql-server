@@ -68,6 +68,8 @@ This role is designed for internal use but if useful can be shared publicly.
 	* **Do not override this variable**, use `mysql_server_user_allowed_hosts_app_mysql_user` instead.
 	* Structured as an array of addresses (IP/hostname/FQDN)
 	* Default: []  (empty array)
+* `mysql_server_user_allowed_hosts_all_mysql_users`
+	* Controls the list of hosts (local or remote) all MySQL users can connect from.
 	* Structured as an array of addresses (IP/hostname/FQDN)
 	* Default: []  (empty array)
 * `mysql_server_user_allowed_hosts_root_mysql_user`

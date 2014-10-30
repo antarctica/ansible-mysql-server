@@ -14,6 +14,8 @@ mysql_server_default_allowed_hosts_root_mysql_user: []
 mysql_server_default_allowed_hosts_controller_mysql_user: []
 mysql_server_default_allowed_hosts_app_mysql_user: []
 
+mysql_server_user_allowed_hosts_all_mysql_users: []
+
 mysql_server_user_allowed_hosts_root_mysql_user: []
 mysql_server_user_allowed_hosts_controller_mysql_user: []
 mysql_server_user_allowed_hosts_app_mysql_user: []
