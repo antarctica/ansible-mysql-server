@@ -34,70 +34,68 @@ This role is designed for internal use but if useful can be shared publicly.
 
 ## Variables
 
-* `mysql_server_root_user_password`
-    * Default password for root user.
+* `mysql_server_root_mysql_user_password`
+    * Default password for MySQL root user.
     * Default: "precipice-08563%"
-* `mysql_server_controller_user_password`
-    * Default password for controller user.
+* `mysql_server_controller_mysql_user_password`
+    * Default password for MySQL controller user.
     * Default: "cacophony-234/877"
-* `mysql_server_app_user_password`
-    * Default password for app user.
+* `mysql_server_app_mysql_user_password`
+    * Default password for MySQL app user.
     * Default: "infamous-&34529"
-* `mysql_server_bind_address`
-    * The address/interface on which to listen for incoming connections.
-    * By default this will bind to the servers external IP to allow external access, to prevent this set this value to "localhost"
-    * Default: "{{ ansible_eth1.ipv4.address }}"
-* `mysql_server_default_allowed_hosts_all_users`
-	* Controls the list of hosts (local or remote) the root user can connect from.
-	* **Do not override this variable**, use `mysql_server_default_allowed_hosts_<user>_user` to set extra default hosts for a user or `mysql_server_user_allowed_hosts_<user>_user` to set extra hosts for a user.
+* `mysql_server_default_allowed_hosts_all_mysql_users`
+	* Controls the default list of hosts (local or remote) all MySQL users can connect from.
+	* **Do not override this variable**
+		* Use `mysql_server_user_allowed_hosts_all_mysql_users` to set extra hosts for all users.
+		* Use `mysql_server_default_allowed_hosts_<user>_mysql_user` to set per user default hosts.
+		* Use `mysql_server_user_allowed_hosts_<user>_mysql_user` to set extra hosts for a user.
     * Structured as an array of addresses (IP/hostname/FQDN)
     * Default: [array]
         * "127.0.0.1"
         * "localhost"
-* `mysql_server_allowed_hosts_app_user`
-    * Controls the list of hosts (local or remote) the app user can connect from.
-	* "127.0.0.1" and "localhost" values MUST be specified in this variable for Ansible to interact with the database.
-	* "localhost" MUST be the last item in this variable, see [here](http://ansible.cc/docs/modules.html#mysql-user) for details.
-	* Structured as an array of addresses (IP/hostname/FQDN)
-	* Default: [array]
-        * "127.0.0.1"
-        * "localhost"
-* `mysql_server_default_allowed_hosts_root_user`
-	* Controls the list of hosts (local or remote) the root user can connect from.
-	* **Do not override this variable**, use `mysql_server_user_allowed_hosts_root_user` instead.
+* `mysql_server_default_allowed_hosts_root_mysql_user`
+	* Controls the default list of hosts (local or remote) the root MySQL user can connect from.
+	* **Do not override this variable**, use `mysql_server_user_allowed_hosts_root_mysql_user` instead.
 	* Structured as an array of addresses (IP/hostname/FQDN)
 	* Default: []  (empty array)
-* `mysql_server_default_allowed_hosts_controller_user`
-	* Controls the list of hosts (local or remote) the controller user can connect from.
-	* **Do not override this variable**, use `mysql_server_user_allowed_hosts_controller_user` instead.
+* `mysql_server_default_allowed_hosts_controller_mysql_user`
+	* Controls the default list of hosts (local or remote) the controller MySQL user can connect from.
+	* **Do not override this variable**, use `mysql_server_user_allowed_hosts_controller_mysql_user` instead.
 	* Structured as an array of addresses (IP/hostname/FQDN)
 	* Default: []  (empty array)
-* `mysql_server_default_allowed_hosts_app_user`
-	* Controls the list of hosts (local or remote) the app user can connect from.
-	* **Do not override this variable**, use `mysql_server_user_allowed_hosts_app_user` instead.
+* `mysql_server_default_allowed_hosts_app_mysql_user`
+	* Controls the default list of hosts (local or remote) the app MySQL user can connect from.
+	* **Do not override this variable**, use `mysql_server_user_allowed_hosts_app_mysql_user` instead.
 	* Structured as an array of addresses (IP/hostname/FQDN)
 	* Default: []  (empty array)
-* `mysql_server_user_allowed_hosts_root_user`
-	* Controls the list of hosts (local or remote) the root user can connect from.
 	* Structured as an array of addresses (IP/hostname/FQDN)
 	* Default: []  (empty array)
-* `mysql_server_user_allowed_hosts_controller_user`
-	* Controls the list of hosts (local or remote) the controller user can connect from.
+* `mysql_server_user_allowed_hosts_root_mysql_user`
+	* Controls the list of hosts (local or remote) the root MySQL user can connect from.
 	* Structured as an array of addresses (IP/hostname/FQDN)
 	* Default: []  (empty array)
-* `mysql_server_user_allowed_hosts_app_user`
-	* Controls the list of hosts (local or remote) the app user can connect from.
+* `mysql_server_user_allowed_hosts_controller_mysql_user`
+	* Controls the list of hosts (local or remote) the controller MySQL user can connect from.
+	* Structured as an array of addresses (IP/hostname/FQDN)
+	* Default: []  (empty array)
+* `mysql_server_user_allowed_hosts_app_mysql_user`
+	* Controls the list of hosts (local or remote) the app MySQL user can connect from.
 	* Structured as an array of addresses (IP/hostname/FQDN)
 	* Default: []  (empty array)
 * `mysql_server_create_app_db`
     * If "true" a database named "app" will be created with the app user assigned full access.
     * Default: "false"
+* `mysql_server_bind_address`
+    * The address/interface on which to listen for incoming connections.
+    * By default this will bind to the servers external IP to allow external access, to prevent this set this value to "localhost"
+    * Default: "{{ ansible_eth1.ipv4.address }}"
 
 ## Changelog
 
 ### 0.3.0 - October 2014
 
 * Updating dependencies
+* Refactoring variables, all existing variables have been renamed to avoid confusion between OS users and MySQL users
 
 ### 0.2.0 - October 2014
 
