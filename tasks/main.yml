@@ -17,7 +17,11 @@
 
 - include: root-user.yml
 - include: controller-user.yml
+  when: mysql_server_controller_mysql_user_enabled == true
+
 - include: app-user.yml
+  when: mysql_server_app_mysql_user_enabled == true
+
 - include: anonymous-user.yml
 
 - include: app-db.yml
