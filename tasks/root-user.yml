@@ -4,7 +4,7 @@
 # User allowed hosts must be set before default hosts
 
 - name: set password for mysql root user
-  mysql_user: name=root password={{ mysql_server_root_user_password }} priv=*.*:ALL,GRANT
+  mysql_user: name=root password={{ mysql_server_root_mysql_user_password }} priv=*.*:ALL,GRANT
 
 - name: ensure correct root password is used
   template: src=root/my.cnf.j2 dest=/root/.my.cnf owner=root mode=0600

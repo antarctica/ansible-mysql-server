@@ -133,6 +133,10 @@ These roles are used for internal projects which may dictate whether any contrib
 
 ## Changelog
 
+### 0.3.1 - October 2014
+
+* Fixing broken variable
+
 ### 0.3.0 - October 2014
 
 * Updating dependencies

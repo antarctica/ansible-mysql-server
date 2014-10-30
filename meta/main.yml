@@ -11,7 +11,7 @@ galaxy_info:
 
 armadillo_info:
   name: MySQL Server
-  version: 0.3.0
+  version: 0.3.1
   source: git@stash.ceh.ac.uk:7999/barc/mysql-server.git
   dependencies:
   - git@stash.ceh.ac.uk:7999/barc/core.git#v0.4.2
