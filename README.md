@@ -95,6 +95,10 @@ This role is designed for internal use but if useful can be shared publicly.
 
 ## Changelog
 
+### 0.2.1 - October 2014
+
+* Updating dependencies
+
 ### 0.2.0 - October 2014
 
 * Refactoring allowed hosts variables into default and user variables (per MySQL user) for consistency with other roles
