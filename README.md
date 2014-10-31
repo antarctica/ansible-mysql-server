@@ -133,6 +133,11 @@ These roles are used for internal projects which may dictate whether any contrib
 
 ## Changelog
 
+### 0.3.3 - October 2014
+
+* Fixing more instances of incorrect login user when creating app user (was using app instead of controller)
+* Fixing incorrect login user when creating app database (was using app instead of controller)
+
 ### 0.3.2 - October 2014
 
 * Fixing incorrect login user when creating app user (was using app instead of controller)
