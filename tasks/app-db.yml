@@ -2,7 +2,7 @@
 # Optionally create default 'app' database asigned to the app user
 
 - name: Create app database
-  mysql_db: login_user="{{ mysql_server_app_mysql_user_username }}" login_password="{{ mysql_server_controller_mysql_user_password }}" name=app state=present
+  mysql_db: login_user="{{ mysql_server_controller_mysql_user_username }}" login_password="{{ mysql_server_controller_mysql_user_password }}" name=app state=present
 
 - name: grant access to app database to app mysql user
-  mysql_user: login_user="{{ mysql_server_app_mysql_user_username }}" login_password="{{ mysql_server_controller_mysql_user_password }}" name="{{ mysql_server_app_mysql_user_username }}" state=present priv=app.*:ALL
+  mysql_user: login_user="{{ mysql_server_controller_mysql_user_username }}" login_password="{{ mysql_server_controller_mysql_user_password }}" name="{{ mysql_server_app_mysql_user_username }}" state=present priv=app.*:ALL
