@@ -1,5 +1,6 @@
 # MySQL Server (`mysql-server`) - Changelog
 
+* Updating default password variables for consistency to highlight they should be changed
 ## 0.3.4 - December 2014
 
 * Preparing role for public release

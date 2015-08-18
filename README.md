@@ -28,7 +28,7 @@ This role is designed for internal use but if useful can be shared publicly.
 
 * `mysql_server_root_mysql_user_password`
     * Default password for MySQL root user.
-    * Default: "precipice-08563%"
+    * Default: "password"
 * `mysql_server_controller_mysql_user_enabled` 
 	* If "true" a user for database server management tasks, termed a controller user, will be created with root privileges.
 	* Default: true
@@ -38,7 +38,7 @@ This role is designed for internal use but if useful can be shared publicly.
 	* Default: "controller"
 * `mysql_server_controller_mysql_user_password`
     * Default password for MySQL controller user.
-    * Default: "cacophony-234/877"
+    * Default: "password"
 * `mysql_server_app_mysql_user_enabled` 
 	* If "true" a user for day to day database tasks, termed an app user, will be created with no initial privileges.
 	* Default: true
