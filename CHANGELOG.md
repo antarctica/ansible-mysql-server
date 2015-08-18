@@ -1,5 +1,11 @@
 # MySQL Server (`mysql-server`) - Changelog
 
+## 0.4.0 - August 2015
+
+* Updating default password variables for consistency to highlight they should be changed
+* Updating dates for licenses
+* General tidying up
+
 ## 0.3.4 - December 2014
 
 * Preparing role for public release
